@@ -1,0 +1,17 @@
+{
+  "name": "keepai",
+  "version": "1.0.0",
+  "description": "InsightFlow AI Chrome Extension",
+  "main": "popup.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "watch": "webpack --watch --config webpack.config.js"
+  },
+  "dependencies": {
+    "firebase": "^10.14.1"
+  },
+  "devDependencies": {
+    "webpack": "^5.90.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
