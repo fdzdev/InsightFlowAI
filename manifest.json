@@ -1,0 +1,82 @@
+{
+    "manifest_version": 3,
+    "name": "InsightFlow AI",
+    "version": "0.789654.5",
+    "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzem3UmZN535fWUO1JurupPb7fgB4laoQktJPtWyYaF7OB656hYfhxCfpKyLIN2H2coKmwLpkX8jXo0WA3RSOOtMJ3AU1xQnubUnUKqHFYcLHxHQOK/a0H/DZITA84njtShZBRoaJtNylAP5gVInQJ7zG2v7Snf3knFeYn/TxFFbhlJlXHelamsVLeAQGkophR8y6xTWwbDcwaHSLsWPCTv5qom0s8EloTpCCa/VmTHQLA5+LuuIC9IOiLDL8PWNmzNya8QrtxXjmPvHs3cCmmAkPn9qp1S4GP2jDyfDAfICO3zUDqhVjK7jNv4hAi0F4gPEhzR+WS20lUd6twfyzxQIDAQAB",
+    "description": "InsightFlow AI is a Chrome extension that helps users boost productivity by instantly summarizing, translating, and generating insights or visualizations from highlighted text, all powered by Google Chrome's built-in AI. It's fast, secure, and works even offline for seamless efficiency.",
+    "permissions": [
+        "activeTab",
+        "contextMenus",
+        "scripting",
+        "notifications",
+        "identity",
+        "identity.email",
+        "storage",
+        "windows"
+    ],
+    "host_permissions": [
+        "https://www.googleapis.com/*",
+        "https://*.firebaseapp.com/*",
+        "https://*.gstatic.com/*",
+        "https://*.firebaseio.com/*",
+        "https://accounts.google.com/*",
+        "https://www.linkedin.com/*",
+        "https://linkedintesting.onrender.com/*",
+        "http://localhost:3000/*"
+    ],
+    "oauth2": {
+        "client_id": "19203262221-vj9b9csd76v2erv9ddiq3ea5a5nb13t7.apps.googleusercontent.com",
+        "scopes": [
+            "https://www.googleapis.com/auth/userinfo.profile",
+            "https://www.googleapis.com/auth/userinfo.email",
+            "https://www.googleapis.com/auth/documents",
+            "https://www.googleapis.com/auth/docs",
+            "https://www.googleapis.com/auth/drive.file"
+        ]
+    },
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "linkedin-callback.html",
+                "home.html",
+                "privacy.html",
+                "terms.html"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ],
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'"
+    },
+    "background": {
+        "service_worker": "background.js",
+        "type": "module"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "images/icon16.png",
+            "48": "images/icon48.png",
+            "128": "images/icon128.png"
+        }
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "type": "module",
+            "run_at": "document_end"
+        }
+    ],
+    "icons": {
+        "16": "images/icon16.png",
+        "48": "images/icon48.png",
+        "128": "images/icon128.png"
+    }
+}
