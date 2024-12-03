@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+
+    <title>InsightFlow AI</title>
+</head>
+
+<body>
+    <!-- Auth Container -->
+    <div id="authContainer" class="auth-container">
+        <div class="auth-content">
+            <h1 class="auth-title">InsightFlow AI</h1>
+            <p class="auth-description">Sign in to access your AI-powered insights and summaries</p>
+            <button id="signInButton" class="google-login-btn">
+                <span class="google-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="18px" height="18px">
+                        <path fill="#4285F4"
+                            d="M24 9.5c3.24 0 5.93 1.11 8.07 2.93l6.01-6.01C34.15 3.11 29.47 1 24 1 14.59 1 6.58 6.82 3 14.73l6.8 5.27c1.53-4.26 5.34-7.5 9.99-7.5z">
+                        </path>
+                        <path fill="#34A853"
+                            d="M9.74 21.55c-.48 1.27-.74 2.62-.74 4.01 0 1.4.26 2.74.73 4.01l6.8-5.27c-.26-.84-.4-1.73-.4-2.65s.14-1.81.39-2.65l-6.8-5.27c-1.34 2.65-1.97 5.46-1.97 8.18z">
+                        </path>
+                        <path fill="#FBBC05"
+                            d="M24 38.5c4.65 0 8.46-3.24 9.99-7.5l-6.8-5.27c-.81 2.13-2.94 3.65-5.19 3.65-2.26 0-4.4-1.52-5.2-3.65l-6.8 5.27c1.52 4.26 5.33 7.5 9.99 7.5z">
+                        </path>
+                        <path fill="#EA4335"
+                            d="M43.99 24c0-.9-.08-1.77-.23-2.65H24v7.51h11.28c-.49 2.55-2.1 4.77-4.47 6.1l6.8 5.27c3.97-3.66 6.38-9.05 6.38-15.23z">
+                        </path>
+                    </svg>
+                </span>
+                <span class="google-text">Sign in with Google</span>
+            </button>
+            <div id="errorMessage" class="error-message"></div>
+        </div>
+    </div>
+
+    <!-- Main app content -->
+    <div id="appContainer" style="display: none;">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="user-section">
+                <div id="userInfo" class="user-info"></div>
+                <button id="logoutButton" class="logout-btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                        <polyline points="16 17 21 12 16 7"></polyline>
+                        <line x1="21" y1="12" x2="9" y2="12"></line>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- New Summary Section -->
+
+            <!-- History Section -->
+            <section class="history-section">
+                <div class="section-header">
+                    <h2>History</h2>
+                    <button id="clearHistoryBtn" class="clear-btn">Clear All</button>
+                </div>
+                <div id="historyList" class="history-list">
+                    <!-- History items will be dynamically added here -->
+                    <div class="empty-state">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                        </svg>
+                        <p>No summaries yet</p>
+                    </div>
+                </div>
+            </section>
+            <section class="new-summary-section">
+                <div class="section-header">
+                    <h2>New Summary</h2>
+                    <button id="expandButton" class="expand-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div id="newSummaryContent" class="section-content">
+                    <textarea id="selectedText" class="text-input"
+                        placeholder="Highlight text on any webpage or paste here..."></textarea>
+                    <div class="action-buttons">
+                        <button id="summaryButton" class="primary-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                            </svg>
+                            Summarize
+                        </button>
+                        <button id="insightsButton" class="secondary-btn">Insights</button>
+                        <button id="chartButton" class="secondary-btn">Chart</button>
+                    </div>
+                </div>
+            </section>
+
+
+
+        </main>
+
+        <!-- Save Options -->
+        <footer class="save-options">
+            <button id="addToDoc" class="save-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                </svg>
+                Save to Docs
+            </button>
+            <button id="addToKeep" class="save-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                </svg>
+                Save to Keep
+            </button>
+        </footer>
+    </div>
+
+
+    <!-- Scripts -->
+    <script type="module" src="firebase-config.js"></script>
+    <script type="module" src="popup.js"></script>
+    <script type="module" src="content.js"></script>
+    <script type="module" src="firebase.js"></script>
+    <script type="module" src="googleDocs.js"></script>
+</body>
+
+</html>
