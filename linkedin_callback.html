@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>LinkedIn Authentication</title>
+    <script>
+        window.onload = function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const code = urlParams.get('code');
+            const state = urlParams.get('state');
+
+            if (code) {
+                chrome.runtime.sendMessage({
+                    type: 'linkedin-auth-callback',
+                    code: code,
+                    state: state
+                }, () => {
+                    window.close();
+                });
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <h3>Completing LinkedIn Authentication...</h3>
+</body>
+
+</html>
