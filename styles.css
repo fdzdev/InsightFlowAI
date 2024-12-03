@@ -1,0 +1,438 @@
+/* Base Styles */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+    color: #ffffff;
+    margin: 0;
+    padding: 16px;
+    width: 380px;
+    height: 600px;
+    overflow-y: auto;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* Auth Container */
+.auth-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.auth-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, #64B5F6, #2196F3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
+.auth-description {
+    color: #9e9e9e;
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* Google Sign In Button */
+.google-login-btn {
+    display: flex;
+    align-items: center;
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.google-login-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.google-icon {
+    margin-right: 12px;
+}
+
+/* App Header */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.user-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-info {
+    font-size: 14px;
+    color: #e0e0e0;
+}
+
+.logout-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 8px;
+    color: #ff4d4d;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+    background: rgba(255, 77, 77, 0.1);
+    transform: scale(1.05);
+}
+
+/* Main Content */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Summary Section */
+.new-summary-section {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.section-header h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    color: #fff;
+}
+
+.text-input {
+    width: 100%;
+    min-height: 120px;
+    padding: 16px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.5;
+    resize: vertical;
+    transition: all 0.3s ease;
+}
+
+.text-input:focus {
+    border-color: #2196F3;
+    box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.2);
+    outline: none;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.primary-btn {
+    flex: 2;
+    padding: 12px;
+    background: linear-gradient(135deg, #2196F3, #1976D2);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+}
+
+.secondary-btn {
+    flex: 1;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.secondary-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+/* History Section */
+.history-section {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 20px;
+}
+
+.history-list {
+    min-height: 200px;
+}
+
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    color: #9e9e9e;
+}
+
+.empty-state svg {
+    margin-bottom: 16px;
+    opacity: 0.5;
+}
+
+/* Save Options */
+.save-options {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+}
+
+.save-btn {
+    flex: 1;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.save-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Error Message */
+.error-message {
+    display: none;
+    color: #ff4d4d;
+    background: rgba(255, 77, 77, 0.1);
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-top: 16px;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.auth-container,
+.app-header,
+.new-summary-section,
+.history-section {
+    animation: fadeIn 0.5s ease-out;
+}
+
+
+.history-item {
+    background: white;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.history-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.history-item-title {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    color: #1976d2;
+}
+
+.history-item-date {
+    font-size: 12px;
+    color: #666;
+}
+
+.history-item-summary {
+    font-size: 13px;
+    color: #444;
+    margin: 8px 0;
+    line-height: 1.4;
+}
+
+.history-item-footer {
+    margin-top: 12px;
+}
+
+.history-item-link {
+    font-size: 12px;
+    color: #1976d2;
+    text-decoration: none;
+}
+
+.history-item-link:hover {
+    text-decoration: underline;
+}
+
+.user-info-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px;
+    margin: 8px 0;
+    background-color: #f8f9fa;
+    border-radius: 20px;
+    padding: 8px 12px;
+}
+
+.profile-pic {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-info-container span {
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.dropdown-menu {
+    position: absolute;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 8px 0;
+    z-index: 1000;
+    min-width: 150px;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    color: #3c4043;
+    font-size: 14px;
+}
+
+.dropdown-item:hover {
+    background: #f1f3f4;
+}
+
+.dropdown-item i {
+    width: 16px;
+}
+
+.dropdown-item.delete-item {
+    color: #d93025;
+}
+
+.dropdown-item.delete-item:hover {
+    background: #fce8e6;
+}
+
+.menu-button {
+    background: transparent;
+    border: none;
+    padding: 8px;
+    border-radius: 50%;
+    color: #5f6368;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.menu-button:hover {
+    background: #f1f3f4;
+    color: #202124;
+}
