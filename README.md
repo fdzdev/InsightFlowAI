@@ -7,4 +7,3 @@ This project includes a demo Firebase configuration for testing purposes. For se
 - The demo project has limited permissions
 - API calls are rate-limited
 - Access is restricted to specific domains
-- Data access is read-only
