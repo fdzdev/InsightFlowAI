@@ -24,15 +24,7 @@ import {
 
 
 // Firebase Configuration FOR DEMO PURPOSES ONLY /// TO BE DELETED 01/05/2025
-const firebaseConfig = {
-    apiKey: "AIzaSyAfW4yjmqv5FIQSowhhrwpjQjAH5pwql4g",
-    authDomain: "extension-f5351.firebaseapp.com",
-    projectId: "extension-f5351",
-    storageBucket: "extension-f5351.appspot.com",
-    messagingSenderId: "888613451098",
-    appId: "1:888613451098:web:bfc741f9c9be59a7fdaf63",
-    measurementId: "G-FM57E0JRBM"
-};
+
 
 import { LINKEDIN_CONFIG, initializeLinkedInAuth, shareToLinkedIn } from './linkedin-config.js';
 
